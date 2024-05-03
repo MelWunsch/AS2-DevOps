@@ -33,4 +33,3 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: melwunsch/as1-devops:latest
-          labels: ''
