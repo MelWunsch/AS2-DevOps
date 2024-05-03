@@ -21,6 +21,17 @@ jobs:
       - uses: actions/checkout@v3  
       - run: python3 run.py
 
+ security-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: SonarQube Scan
+        uses: sonarsource/sonarcloud-github-action@v1
+        with:
+          organization: "your-organization"
+          token: ${{ secrets.SONAR_TOKEN }}
+          projectKey: "your-project-key"
+          projectName: "Your Project Name"
 
   deploy-job:
     runs-on: ubuntu-latest
